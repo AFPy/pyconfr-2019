@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}" prefix="og: http://ogp.me/ns#">
+<head>
+  {% block head %}
+    <title>{{ SITENAME }} - {% block title %}{% endblock title %}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ SITEURL }}/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block meta_extra %}{% endblock %}
+
+    {% assets filters="libsass,cssmin", output="css/style.min.css", "css/style.sass", "css/programme.sass" %}
+      <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+    {% endassets %}
+    <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
+  {% endblock head %}
+</head>
+
+<body id="{{ output_file.split('/')[0] }}" {% if output_file.split('/')[0] != "index" %}class="body-pages"{% endif %}>
+  <header>
+    <h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
+    {% block header %}{% endblock header %}
+  </header>
+
+  <ul id="flags">
+    {% for title, link in MENUITEMS %}
+      {% if output_file.split('/')[0] in link %}
+        <a href="{{ main_siteurl}}{{ link }}">fr</a> / <a href="{{ main_siteurl }}/en{{ link }}">en</a>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+  <nav id="menu" class="{% if output_file.split('/')[0] != 'index' %}menu-pages{% endif %}">
+    <ul>
+      {% for title, link in MENUITEMS %}
+        {# There must be a better way than the *in* operator #}
+        <li{% if output_file.split('/')[0] in link %} class="active"{% endif %}>
+          <a href="{{ SITEURL }}{{ link }}">{{ title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  {% block content %}{% endblock %}
+
+  {% block partners %}
+  <div class="partnersTEST">
+    <!--
+    <h2>Nos partenaires</h2>
+    <h3>Platine</h3>
+    <p>
+      <a href="TODO"><img src="TODO" alt="TODO" /></a>
+    </p>
+    -->
+  </div>
+  {% endblock %}
+
+  <footer>
+    <ul>
+      {% for title, link in SOCIAL %}
+        <li>
+          <a class="{{ title | lower }}" href="{{ link }}">{{ title }}</a>
+        </li>
+      {% endfor %}
+      <li>
+        <a href="/"> © {{ SITENAME }}</a>
+      <li>
+      <li>
+        <a href="http://blog.getpelican.com/">Powered by Pelican</a>
+      </li>
+    </ul>
+  </footer>
+</body>
+</html>

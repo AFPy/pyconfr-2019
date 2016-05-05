@@ -1,0 +1,10 @@
+*.pid
+*.pyc
+output/
+cache/
+.venv
+*.swp
+.DS_Store
+lib/
+bin/
+include/
