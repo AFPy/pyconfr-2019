@@ -46,22 +46,6 @@ a
   color: $primary
   text-decoration: inherit
 
-table
-  border-collapse: collapse
-  margin: 1em auto
-  max-width: 100%
-
-  th
-    font-weight: normal
-
-  td
-    border: 1px solid $secondary
-    padding: 0.25em
-
-    &:not(:first-child)
-      text-align: center
-      width: 15%
-
 
 aside
   position: absolute
@@ -97,9 +81,9 @@ aside, nav, footer
 main
   flex: 1
 
-  > *
+  article > *
     box-sizing: border-box
-    max-width: 100%
+    max-width: 95%
     margin-left: auto
     margin-right: auto
     padding-left: 2rem
@@ -113,6 +97,21 @@ main
     &:not(:first-child)
       border-top: 1px solid $secondary
 
+    table
+      border-collapse: collapse
+      margin: 1em auto
+      width: 60rem
+
+      th
+        font-weight: normal
+
+      td
+        border: 1px solid $secondary
+        padding: 0.25em
+
+        &:not(:first-child)
+          text-align: center
+          width: 15%
 
 #index
   article:first-child
