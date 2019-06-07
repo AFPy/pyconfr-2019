@@ -1,0 +1,165 @@
+{% extends '_layout.jinja2' %}
+
+{% block content %}
+  <article>
+    <h2>Nous aider avant et pendant l'événement</h2>
+
+    <p>
+      Si vous souhaitez nous aider pour la préparation de l'événement, et/ou
+      lors de l'événement, n'hésitez pas à nous contacter à
+      <a href="mailto:contact@afpy.org">contact@afpy.org</a>.
+    </p>
+
+    <p>
+      Toute aide bénévole lors de l'événement est la bienvenue !
+    </p>
+  </article>
+
+  <article>
+    <h2>Financer PyConFr</h2>
+
+    <p>
+      Le mécénat nous permet chaque année de couvrir les frais comme la
+      sécurité, des boissons chaudes et fraîches, le nettoyage, la captation
+      vidéo…
+    </p>
+
+    <p>
+      PyConFr est organisé par des bénévoles de la communauté Python
+      francophone et permet à cette communauté de se rencontrer, d'échanger et
+      de grandir chaque année.
+    </p>
+
+    <p>
+      Si vous souhaitez nous soutenir financièrement, vous pouvez contacter le
+      trésorier de l'AFPy
+      (<a href="mailto:tresorier@afpy.org">tresorier@afpy.org</a>) afin de
+      discuter des détails.
+    </p>
+
+    <p>
+      Cette année, nous proposons les montants et contreparties suivantes :
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Bénéfice</th>
+          <th>Cœur (montant libre)</th>
+          <th>Bronze 500 €</th>
+          <th>Argent 1000 €</th>
+          <th>Or 2000 €</th>
+          <th>Platine - Transcription - 4000 €</th>
+          <th>Platine - Boissons et viennoiseries - 4000 €</th>
+          <th>Platine - Vidéo - 6000 €</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nom et logo sur <a href="{{ url_for('page', name='sponsors', lang=lang) }}">la page « Sponsors »</a></td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+        </tr>
+        <tr>
+          <td>Présentation de 1000 caractères sur <a href="{{ url_for('page', name='sponsors', lang=lang) }}">la page « Sponsors »</a></td>
+          <td>-</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+        </tr>
+        <tr>
+          <td>Logo sur <a href="{{ url_for('page', name='sponsors', lang=lang) }}">la page d'accueil</a></td>
+          <td>-</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+        </tr>
+        <tr>
+          <td>Logo sur les affiches et documents imprimés</td>
+          <td>-</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+        </tr>
+        <tr>
+          <td>Panneau dans les salles de conférence</td>
+          <td> -</td>
+          <td> -</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+        </tr>
+        <tr>
+          <td>Présentation de l'entreprise (2 min) en conférence plénière (samedi)</td>
+          <td>-</td>
+          <td>-</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+        </tr>
+        <tr>
+          <td>Stand dans le hall</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+        </tr>
+        <tr>
+          <td>Votre logo sur l'écran de transcription textuelle et sur les vidéos sous-titrées grâce aux transcriptions</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>✔</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Votre logo sur les tables accueillant les viennoiseries et les boissons</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>✔</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Votre logo au début des captations vidéos</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>✔</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      Les contreparties sont effectives dès réception du réglement.
+    </p>
+  </article>
+{% endblock content %}

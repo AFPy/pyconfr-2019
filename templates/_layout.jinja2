@@ -1,0 +1,74 @@
+{%- set MENU = (
+  ('index', ('À propos', 'About')),
+  ('schedule', ('Programme', 'Schedule')),
+  ('venue', ('Venir', 'Venue')),
+  ('financial', ('Bourses', 'Financial Assistance')),
+  ('sponsors', ('Sponsors', 'Sponsors')),
+  ('news', ('Actualités', 'News')),
+  ('conduct', ('Code de conduite', 'Code of Conduct')),
+  ('support', ('Nous soutenir', 'Support Us')),
+) -%}
+
+{%- set title = dict(MENU).get(page_name, 'Bordeaux')[1 if lang == 'en' else 0] -%}
+
+{%- from '_sponsors.jinja2' import sponsors -%}
+
+<!DOCTYPE html>
+
+<html lang="{{ lang }}">
+  <head>
+    {% block head %}
+      <title>{{ title }} − PyConFr 2019</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}" />
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% endblock head %}
+  </head>
+
+  <body id="{{ page_name }}">
+    <header>
+      <h1>{{ title }}</h1>
+    </header>
+
+    <aside>
+      <ul>
+        <li class="{{ 'active' if lang == 'fr' }}">
+          <a href="{{ url_for('page', name=page_name, lang='fr') }}">
+            Français
+          </a>
+        </li>
+        <li class="{{ 'active' if lang == 'en' }}">
+          <a href="{{ url_for('page', name=page_name, lang='en') }}">
+            English
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <nav>
+      <ul>
+        {% for endpoint, (title_fr, title_en) in MENU %}
+          <li class="{{ 'active' if page_name == endpoint }}">
+            <a href="{{ url_for('page', name=endpoint, lang=lang) }}">{{ title_en if lang == 'en' else title_fr }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <main>
+      {% block content %}{% endblock content %}
+    </main>
+
+    <footer>
+      <ul>
+        <li><a href="mailto:contact@pycon.fr">Email</a></li>
+        <li><a href="https://twitter.com/pyconfr">Twitter</a></li>
+        <li><a href="https://github.com/AFPy/pyconfr_2019">GitHub</a></li>
+        <li>{{ 'Powered by' if lang == 'en' else 'Propulsé par' }} <a href="https://pythonhosted.org/Frozen-Flask/">Frozen-Flask</a></li>
+        <li>© 2019 <a href="https://afpy.org/">AFPy</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>

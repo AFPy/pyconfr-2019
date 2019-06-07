@@ -1,0 +1,94 @@
+{% extends '_layout.jinja2' %}
+
+{% block content %}
+  <article>
+    <h2>Bordeaux</h2>
+    <p>
+      Du 31 octobre au 3 novembre 2019.
+    </p>
+    <p>
+      Organisée par <a href="https://afpy.org">l'AFPy</a>, cette conférence est
+      gratuite, entièrement organisée par des bénévoles et regroupe les
+      personnes intéressées par le langage de
+      programmation <a href="https://python.org">Python</a>.
+    </p>
+    <ul>
+      <li>
+        <a href="{{ url_for('page', name='schedule', lang=lang) }}">Voir le programme</a>
+      </li>
+    </ul>
+  </article>
+
+  <article>
+    <h2>Programme</h2>
+
+    <section>
+      <h3>Codage participatif (« sprints »)</h3>
+      <p>
+        Les deux premiers jours sont réservés à des sprints.
+      </p>
+      <p>
+        Les développeurs et développeuses de différents projets open source se
+        rejoignent pour coder ensemble. Chaque personne est la bienvenue pour
+        contribuer, et nous cherchons également à accompagner les débutant·e·s.
+      </p>
+      <p>
+        Participez au développement de votre projet préféré ! Nous fournissons
+        l'espace et le matériel nécessaire à l'organisation (tables, chaises,
+        connexion internet… et café !).
+      </p>
+    </section>
+
+    <section>
+      <h3>Conférences et ateliers</h3>
+      <p>
+        Durant ces deux jours, vous aurez l'occasion de participer à des
+        présentations sur des sujets variés, autour du langage Python, de ses
+        usages, des bonnes pratiques, des retours d'expériences, des partages
+        d'idées…
+      </p>
+    </section>
+  </article>
+
+  <article>
+    <h2>AFPy</h2>
+    <ul>
+      <li>
+        Nous assurons la promotion du langage de programmation Python auprès du
+        plus large public possible.
+      </li>
+      <li>
+        Nous diffusons nos connaissances et sommes ouverts aux apports
+        extérieurs.
+      </li>
+      <li>
+        La solidarité et la démocratie élargissent les horizons et accroissent
+        le potentiel de chacun.
+      </li>
+    </ul>
+  </article>
+
+  <article>
+    <h2>Le lieu</h2>
+    <address>
+      Université de Bordeaux
+    </address>
+    <ul>
+      <li>
+        <a href="{{ url_for('page', name='venue', lang=lang) }}">
+          Plus de détails
+        </a>
+      </li>
+    </ul>
+  </article>
+
+  <article>
+    <h2>Nos soutiens</h2>
+    {{ sponsors(lang) }}
+    <p>
+      L'équipe locale est disponible pour répondre à vos questions sur
+      l'événement à
+      l'adresse <a href="mailto:contact@pycon.fr">contact@pycon.fr</a>.
+    </p>
+  </article>
+{% endblock content %}

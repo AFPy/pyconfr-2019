@@ -1,0 +1,162 @@
+{% extends '_layout.jinja2' %}
+
+{% block content %}
+  <article>
+    <h2>Help Us Before and During the Event</h2>
+
+    <p>
+      If you wish to help us with the preparation and/or during the event, do
+      not hesitate to contact us
+      at <a href="mailto:contact@afpy.org">contact@afpy.org</a>.
+    </p>
+
+    <p>
+      Any volunteer help during the event is welcome!
+    </p>
+  </article>
+
+  <article>
+    <h2>Sponsor PyConFr</h2>
+
+    <p>
+      Patronage allows us each year to cover costs such as safety, hot and cold
+      drinks, cleaning, video coverage…
+    </p>
+
+    <p>
+      PyConFr is organized by volunteers from the francophone Python community
+      and allows this community to meet, exchange and grow each year.
+    </p>
+
+    <p>
+      If you wish to support us financially, you can contact the treasurer of
+      AFPy (<a href="mailto:tresorier@afpy.org">tresorier@afpy.org</a>) in
+      order to discuss the details.
+    </p>
+
+    <p>
+      This year, we propose the following amounts and counterparts:
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Benefit</th>
+          <th>Heart (amount of your choice)</th>
+          <th>Bronze €500</th>
+          <th>Silver €1000</th>
+          <th>Gold €2000</th>
+          <th>Platinium - Transcript - €4000</th>
+          <th>Platinium - Drinks and viennoiseries - €4000</th>
+          <th>Platinium - Video - €6000</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Name and logo on the <a href="{{ url_for('page', name='sponsors', lang=lang) }}">"Sponsors" page</a></td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+        </tr>
+        <tr>
+          <td>1000-character presntation on the <a href="{{ url_for('page', name='sponsors', lang=lang) }}">"Sponsors" page</a></td>
+          <td>-</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+        </tr>
+        <tr>
+          <td>Logo on the <a href="{{ url_for('page', name='index', lang=lang) }}">index page</a></td>
+          <td>-</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+        </tr>
+        <tr>
+          <td>Logo on posters and printed documents</td>
+          <td>-</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+        </tr>
+        <tr>
+          <td>Kakemono in conference rooms</td>
+          <td> -</td>
+          <td> -</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+        </tr>
+        <tr>
+          <td>Presentation of the enterprise (2 min) at the conferences kick-off (Saturday)</td>
+          <td>-</td>
+          <td>-</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+        </tr>
+        <tr>
+          <td>Stand in the hall</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+        </tr>
+        <tr>
+          <td>Logo on the transcription screen and on subtitled videos</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>✔</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Logo on tables with viennoiseries and drinks</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>✔</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Logo at the beginning of video recordings</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>✔</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      Benefits are available as soon as the invoice is paid.
+    </p>
+  </article>
+{% endblock content %}

@@ -1,0 +1,45 @@
+{% macro sponsors(lang) %}
+  {% if lang == 'fr' %}
+    <p>
+      Vous souhaitez nous soutenir ?
+      <a href="{{ url_for('page', name='support', lang=lang)}}">Devenez sponsor</a> et
+      offrez à votre entreprise une plus grande visibilité lors de cet événement.
+    </p>
+
+    <!--
+      <section>
+        <h3>Platine</h3>
+      </section>
+      <section>
+        <h3>Or</h3>
+      </section>
+      <section>
+        <h3>Argent</h3>
+      </section>
+      <section>
+        <h3>Bronze</h3>
+      </section>
+    -->
+  {% else %}
+    <p>
+      If you wish to support us, please
+      <a href="{{ url_for('page', name='support', lang=lang)}}">become sponsor</a> to
+      offer a wider visibility to your enterprise during this event.
+    </p>
+
+    <!--
+      <section>
+        <h3>Platinium</h3>
+      </section>
+      <section>
+        <h3>Gold</h3>
+      </section>
+      <section>
+        <h3>Silver</h3>
+      </section>
+      <section>
+        <h3>Bronze</h3>
+      </section>
+    -->
+  {% endif %}
+{% endmacro %}
