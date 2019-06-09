@@ -32,21 +32,6 @@
       <h1>{{ title }}</h1>
     </header>
 
-    <aside>
-      <ul>
-        <li class="{{ 'active' if lang == 'fr' }}">
-          <a href="{{ url_for('page', name=page_name, lang='fr') }}">
-            Français
-          </a>
-        </li>
-        <li class="{{ 'active' if lang == 'en' }}">
-          <a href="{{ url_for('page', name=page_name, lang='en') }}">
-            English
-          </a>
-        </li>
-      </ul>
-    </aside>
-
     <nav>
       <ul>
         {% for endpoint, (title_fr, title_en) in MENU %}
@@ -57,6 +42,21 @@
       </ul>
     </nav>
 
+    <aside>
+      <ul>
+        <li id="french" class="{{ 'active' if lang == 'fr' }}">
+          <a title="Français" href="{{ url_for('page', name=page_name, lang='fr') }}">
+            Français
+          </a>
+        </li>
+        <li id="english" class="{{ 'active' if lang == 'en' }}">
+          <a title="English" href="{{ url_for('page', name=page_name, lang='en') }}">
+            English
+          </a>
+        </li>
+      </ul>
+    </aside>
+
     <main>
       {% block content %}{% endblock content %}
     </main>
@@ -66,7 +66,7 @@
         <li><a href="mailto:contact@pycon.fr">Email</a></li>
         <li><a href="https://twitter.com/pyconfr">Twitter</a></li>
         <li><a href="https://github.com/AFPy/pyconfr_2019">GitHub</a></li>
-        <li><a href="https://pythonhosted.org/Frozen-Flask/">{{ 'Powered by' if lang == 'en' else 'Propulsé par' }} Frozen-Flask</a></li>
+        <li><a href="https://pythonhosted.org/Frozen-Flask/">Frozen-Flask</a></li>
         <li><a href="https://afpy.org/">© 2019 AFPy</a></li>
       </ul>
     </footer>
