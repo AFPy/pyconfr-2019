@@ -25,6 +25,7 @@ $secondary: #ffd205
 html
   color: $text
   font-family: dosis
+  font-size: 1.2em
 
 body
   display: flex
@@ -46,14 +47,6 @@ a
   color: $primary
   text-decoration: inherit
 
-
-aside
-  position: absolute
-  top: 0
-  right: 0
-
-footer ul
-  justify-content: center
 
 aside, nav, footer
   background: $text
@@ -77,6 +70,39 @@ aside, nav, footer
       &.active a
         background: $primary
 
+aside
+  align-self: flex-end
+  height: 0
+  z-index: 1
+
+  ul li
+    font-size: 0
+    opacity: 0.4
+    padding-right: 0.5rem
+    padding-top: 0.5rem
+
+    a::before
+      background: center / cover
+      content: ''
+      display: block
+      height: 1rem
+      width: 1.5rem
+
+    &#french a::before
+      background-image: url(/2019/static/images/france.svg)
+
+    &#english a::before
+      background-image: url(/2019/static/images/united-kingdom.svg)
+
+    &.active
+      opacity: 1
+
+      a
+        background: transparent
+
+footer ul
+  justify-content: center
+
 
 main
   flex: 1
@@ -99,7 +125,7 @@ main
 
     table
       border-collapse: collapse
-      margin: 1em auto
+      margin: 2em auto
       width: 60rem
 
       th
@@ -113,15 +139,27 @@ main
           text-align: center
           width: 15%
 
+
 #index
   article:first-child
-    background: #eee
+    background: linear-gradient(rgba(white, 0.2), rgba(white, 0.75), white)
     display: flex
     flex-direction: column
-    font-size: 1.5em
+    font-size: 1.25em
     height: 100vh
     justify-content: center
+    padding-bottom: 0
+    position: relative
     text-align: center
+
+    &::before
+      background: url(/2019/static/images/bordeaux-small.jpg) center / cover
+      content: ''
+      display: block
+      height: 100%
+      position: absolute
+      width: 100%
+      z-index: -1
 
     h2
       font-size: 0
@@ -129,16 +167,23 @@ main
       &::before
         content: url(/2019/static/images/logo.svg)
         display: block
-        margin: auto
+        margin: -3rem auto 0
         max-width: 30rem
         width: 80%
 
     p
-      margin: 2rem auto
-      width: 80%
+      margin: 1rem auto
+      width: 75%
 
       &:first-of-type
+        font-family: unica
         font-size: 1.5em
+        line-height: 1
+        margin-bottom: 0
+
+        sup
+          font-size: 0.5em
+          vertical-align: 55%
 
     ul
       display: flex
@@ -153,3 +198,23 @@ main
           background: $primary
           color: $background
           padding: 1em
+
+
+@media (max-width: 800px)
+  html
+    font-size: 1em
+
+  nav, footer
+    ul li a
+      font-size: 0.9em
+      padding: 0.5em
+
+  aside ul
+    flex-direction: column
+
+  main article table
+    font-size: 0.9em
+    width: auto
+
+  #index article:first-child p
+    width: 95%
