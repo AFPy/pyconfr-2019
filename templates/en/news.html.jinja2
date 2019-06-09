@@ -1,10 +1,50 @@
 {% extends '_layout.jinja2' %}
 
 {% block content %}
-  <!--
   <article>
-    <h2>Title</h2>
-    <p>Content</p>
+    <h2>PyConFr 2019</h2>
+
+    <p>
+      The 2018 edition of the francophone community's conference on Python will
+      be held in Bordeaux from Octobre 31<sup>st</sup> to November
+      3<sup>rd</sup> 2019.
+    </p>
+
+    <p>
+      The first two days are reserved for participative coding sessions. Developers
+      from different open source projects come to code together. Everyone is welcome
+      to contribute, and we seek to guide beginners. We provide the space and
+      environment (tables, chairs, internet connection... and coffee!). Represented
+      projects will be announced on our site as they register.
+    </p>
+
+    <p>
+      During the two following days, you will have the opportunity to attend to
+      presentations on various topics, about the Python programming language, its use
+      cases, good practices, feedbacks, shared ideas... A call for proposals is to be
+      announced soon.
+    </p>
+
+    <p>
+      This event is hosted by the Université de Bordeaux. Thanks to them :).
+    </p>
+
+    <p>
+      We ask everyone wishing to come to read the
+      <a href="{{ url_for('page', name='conduct', lang=lang) }}">code of conduct</a>.
+      We want this conference to be a welcoming event for
+      everyone. AFPy working group is mobilized to make everyone feel good
+      during the conference. Actions will be announced.
+    </p>
+
+    <p>
+      If you already want to organize your journey, we have prepared the
+      <a href=" href="{{ url_for('page', name='venue', lang=lang) }}">Venue</a> page.
+    </p>
+
+    <p>
+      We have several other announcements for you in the coming weeks, so
+      follow us on <a href="https://twitter.com/pyconfr">Twitter</a>.
+    </p>
   </article>
-  -->
 {% endblock content %}
