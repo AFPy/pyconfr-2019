@@ -143,7 +143,7 @@
               <h4>{{ company }}</h4>
             {% endif %}
             <a href="{{ link }}" class="logo">
-              <img src="{{ url_for('static', filename='images/sponsors/{}.svg'.format(company.replace('/', '-'))) }}" alt="Logo {{ company }}" />
+              <img src="{{ url_for('static', filename='images/partners/{}.svg'.format(company.replace('/', '-'))) }}" alt="Logo {{ company }}" />
             </a>
             {% if not only_logo %}
               {{ description(company, lang) }}
