@@ -1,45 +1,156 @@
-{% macro sponsors(lang) %}
+{% macro description(company, lang) %}
+  {% if lang == 'fr' %}
+
+    {% if company == 'Clever Cloud' %}
+      <p>
+        Clever Cloud est une entreprise de PaaS Française. Nous aidons les
+        développeurs à déployer leurs applications en production avec une
+        infrastructure sans faille, à un prix juste et des fonctionnalités
+        modernes comme la scalabilité automatique ou le blue-green
+        deployment. Nous construisions un service facile à utiliser, sans
+        verrou éditeur et pouvant grossir selon vos besoins.
+      </p>
+    {% elif company == 'Logilab' %}
+      <p>
+        Logilab <em>développe</em> des <em>logiciels</em>, et propose
+        du <em>conseil</em> et des <em>formations</em> de haut niveau dans les
+        domaines de l'<em>informatique scientifique</em> et du <em>web
+        sémantique</em>, en utilisant des <em>outils et méthodes agiles</em>.
+      </p>
+      <p>
+        Logilab s'est <em>spécialisée</em> dans l'utilisation de certains
+        outils (<em>Python</em>, <em>CubicWeb</em>, <em>Debian</em>, etc.) et
+        techniques (génie logiciel, programmation multi-paradigmes,
+        statistiques, logique, etc.) pour les appliquer aux domaines de
+        l'<em>informatique scientifique</em> (simulation numérique, calcul
+        hautes performances, analyse de données, etc.) et du
+        <em>web sémantique</em> (<em>gestion de connaissances</em>, agrégation
+        de bases de données, outils de recherche et de veille, etc.).
+      </p>
+      <p>
+        Les <em>formations</em> de <em>Logilab Campus</em> s'adressent en
+        priorité aux ingénieurs, chercheurs et techniciens désireux d'accroître
+        leur culture informatique. Elles couvrent des sujets variés (Python,
+        conception orientée objet, méthodes de développement agiles, etc.) et
+        sont systématiquement adaptées aux besoins des participants, qu'il
+        s'agisse de sessions intra ou inter-entreprises.
+      </p>
+      <p>
+        Logilab est un acteur du <em>Logiciel Libre</em> et met à disposition
+        certains de ses développements sur ses
+        sites <a href="https://logilab.org">logilab.org</a> et
+        <a href="https://cubicweb.org">cubicweb.org</a>.
+      </p>
+    {% endif %}
+
+  {% elif lang == 'en' %}
+
+    {% if company == 'Clever Cloud' %}
+      <p>
+        Clever Cloud help developers to deploy and run their apps with
+        bulletproof infrastructure, automatic scaling, fair pricing and other
+        cool features. We aim to make an easy-to-use service, without any
+        vendor lock-in and able to grow with your needs.
+      </p>
+    {% elif company == 'Logilab' %}
+      <p>
+        <a href="https://www.logilab.fr/">Logilab</a> is an IT company
+        specialized in advanced and scientific computing.
+      </p>
+      <p>
+        By building on its expertise center, Logilab is able to implement
+        software solutions and to propose high value services and trainings in
+        such fields as advanced and scientific computing and knowledge
+        management.
+      </p>
+      <p>
+        Logilab’s expertise center has specialized in the use of several tools
+        (Python, C, C++, etc.) and techniques (software engineering, agile
+        project management, multi-paradigm programming, statistics, logic,
+        etc.) and applies them to advanced computing (data analysis, numerical
+        problem solving, simulation, etc.) and knowledge management (content
+        management systems, workflow automation, database aggregation,
+        indexation tools, documentation management, etc.).  Logilab’s training
+        sessions are designed for engineers willing to enhance their computer
+        science skills. They cover a wide range of topics (Python, XML,
+        SaltStack, Object Oriented design and programming, C++, agile project
+        management, etc.) and are always fine tuned to best suit the needs of
+        attendees.
+      </p>
+      <p>
+        Logilab is an actor in the Free/Open Source Software community. The
+        company favors solutions built on Free/Open Source Software when they
+        meet the needs of the end users, and guarantee the required stability
+        of the systems. Some of the internal developments of the company are
+        released as open source on Logilab's free software projects site
+        <a href="http://www.logilab.org">http://www.logilab.org</a>.
+      </p>
+    {% endif %}
+
+  {% endif %}
+{% endmacro %}
+
+{% macro sponsors(lang, only_logo=False) %}
+  {% set levels = {
+  'Platine' if lang == 'fr' else 'Platinium': {
+  },
+
+  'Or' if lang == 'fr' else 'Gold': {
+    'Clever Cloud': 'https://www.clever-cloud.com/',
+  },
+
+  'Argent' if lang == 'fr' else 'Silver': {
+    'Logilab': 'https://www.logilab.fr/',
+  },
+
+  'Bronze': {
+  },
+
+  'Cœur' if lang == 'fr' else 'Heart': {
+    'Mergify': 'https://mergify.io/',
+    'OctopusMind': 'https://www.octopusmind.info/',
+  },
+
+  'Partenaires' if lang == 'fr' else 'Partners':
+  {
+    'Python Software Foundation': 'https://www.python.org/psf-landing/',
+    'Sticker Mule': 'https://www.stickermule.com/',
+    'GNU/Linux Magazine': 'https://www.gnulinuxmag.com/',
+  },
+  } %}
+
   {% if lang == 'fr' %}
     <p>
       Vous souhaitez nous soutenir ?
       <a href="{{ url_for('page', name='support', lang=lang)}}">Devenez sponsor</a> et
       offrez à votre entreprise une plus grande visibilité lors de cet événement.
     </p>
-
-    <!--
-      <section>
-        <h3>Platine</h3>
-      </section>
-      <section>
-        <h3>Or</h3>
-      </section>
-      <section>
-        <h3>Argent</h3>
-      </section>
-      <section>
-        <h3>Bronze</h3>
-      </section>
-    -->
   {% else %}
     <p>
       If you wish to support us, please
       <a href="{{ url_for('page', name='support', lang=lang)}}">become sponsor</a> to
       offer a wider visibility to your enterprise during this event.
     </p>
-
-    <!--
-      <section>
-        <h3>Platinium</h3>
-      </section>
-      <section>
-        <h3>Gold</h3>
-      </section>
-      <section>
-        <h3>Silver</h3>
-      </section>
-      <section>
-        <h3>Bronze</h3>
-      </section>
-    -->
   {% endif %}
+
+  {% for level, companies in levels.items() %}
+    {% if companies %}
+      <section class="sponsors">
+        <h3>{{ level }}</h3>
+        {% for company, link in companies.items() %}
+          <section>
+            {% if not only_logo %}
+              <h4>{{ company }}</h4>
+            {% endif %}
+            <a href="{{ link }}" class="logo">
+              <img src="{{ url_for('static', filename='images/sponsors/{}.svg'.format(company.replace('/', '-'))) }}" alt="Logo {{ company }}" />
+            </a>
+            {% if not only_logo %}
+              {{ description(company, lang) }}
+            {% endif %}
+          </section>
+        {% endfor %}
+      {% endif %}
+    </section>
+  {% endfor %}
 {% endmacro %}
