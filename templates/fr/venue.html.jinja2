@@ -4,13 +4,37 @@
   <article>
     <h2>Adresse</h2>
     <p>
-      PyConFr 2019 est hébergée par <a>L'université de Bordeaux</a>.
+      PyConFr 2019 est hébergée
+      par l’<a href="https://www.u-bordeaux.fr/">Université de Bordeaux</a>,
+      sur
+      le <a href="https://www.u-bordeaux.fr/Universite/Campus/Campus-Talence-Pessac-Gradignan">Campus
+      de Talence</a>.
     </p>
     <address>
+      Université de Bordeaux
+      Bâtiment A22
+      351 Cours de la Libération
+      33400 Talence
     </address>
     <p>
-      Coordonnées GPS :
+      Coordonnées GPS : 44,8073 -0,5988
     </p>
+    <div id="map"></div>
+    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+    <script>
+      map = new OpenLayers.Map("map");
+      map.addLayer(new OpenLayers.Layer.OSM());
+      var lonLat = new OpenLayers.LonLat(-0.5988, 44.8073)
+        .transform(
+          new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+          map.getProjectionObject() // to Spherical Mercator Projection
+        );
+      var zoom=16;
+      var markers = new OpenLayers.Layer.Markers("Markers");
+      map.addLayer(markers);
+      markers.addMarker(new OpenLayers.Marker(lonLat));
+      map.setCenter(lonLat, zoom);
+    </script>
   </article>
 
   <article>
@@ -18,13 +42,24 @@
 
     <section>
       <h3>En métro</h3>
+      <p>
+        Vous pouvez rejoindre le campus par
+        le <a href="https://www.infotbm.com/info/line/tbt-60">métro B</a>,
+        arrêt Béthanie.
+      </p>
     </section>
 
     <section>
       <h3>En vélo libre service</h3>
+      <p>
+        Vous pouvez également vous rendre sur le campus
+        en <a href="https://www.infotbm.com/fr/v3-comment-ca-marche.html">vélo
+        libre service (V3)</a>, à l'arrêt Arts et Metiers (n° 112).
+      </p>
     </section>
   </article>
 
+  <!--
   <article>
     <h2>Venir à Bordeaux</h2>
 
@@ -44,4 +79,5 @@
   <article>
     <h2>Conseils pour le logement</h2>
   </article>
+  -->
 {% endblock content %}
