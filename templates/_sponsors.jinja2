@@ -280,13 +280,13 @@
         <h3>{{ level }}</h3>
         {% for company, link in companies.items() %}
           <section>
-            {% if not only_logo %}
+            {% if not only_logo and level not in ('Heart', 'Partners', 'Cœur', 'Partenaires') %}
               <h4>{{ company }}</h4>
             {% endif %}
             <a href="{{ link }}" class="logo">
               <img src="{{ url_for('static', filename='images/partners/{}.svg'.format(company.replace('/', '-'))) }}" alt="Logo {{ company }}" />
             </a>
-            {% if not only_logo %}
+            {% if not only_logo and level not in ('Heart', 'Partners', 'Cœur', 'Partenaires') %}
               {{ description(company, lang) }}
             {% endif %}
           </section>
