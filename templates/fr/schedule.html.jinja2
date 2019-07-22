@@ -1,6 +1,11 @@
 {% extends '_layout.jinja2' %}
 
 {% block content %}
+  <hgroup>
+    <h2>Programme</h2>
+    <hr/>
+    <img src="{{ url_for('static', filename='svg/agenda.svg') }}" alt='Programme'/>
+  </hgroup>
   <article>
     <h2>Conférences et ateliers</h2>
     <p>

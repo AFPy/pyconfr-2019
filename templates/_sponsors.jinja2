@@ -595,13 +595,13 @@
   {% set png_logos = ('Invivoo',) %}
 
   {% if lang == 'fr' %}
-    <p>
+    <p class="text-center">
       Vous souhaitez nous soutenir ?
       <a href="{{ url_for('page', name='support', lang=lang)}}">Devenez sponsor</a> et
       offrez à votre entreprise une plus grande visibilité lors de cet événement.
     </p>
   {% else %}
-    <p>
+    <p class="text-center">
       If you wish to support us, please
       <a href="{{ url_for('page', name='support', lang=lang)}}">become sponsor</a> to
       offer a wider visibility to your enterprise during this event.
@@ -612,19 +612,21 @@
     {% if companies %}
       <section class="sponsors">
         <h3>{{ level }}</h3>
+        <section>
         {% for company, link in companies.items() %}
-          <section>
             {% if not only_logo and level not in ('Heart', 'Partners', 'Cœur', 'Partenaires') %}
-              <h4>{{ company }}</h4>
+              <div class="sponsor">
+                <h4>{{ company }}</h4>
             {% endif %}
             <a href="{{ link }}" class="logo">
               <img src="{{ url_for('static', filename='images/partners/{}.{}'.format(company.replace('/', '-'), 'png' if company in png_logos else 'svg')) }}" alt="Logo {{ company }}" />
             </a>
             {% if not only_logo and level not in ('Heart', 'Partners', 'Cœur', 'Partenaires') %}
-              {{ description(company, lang) }}
+                {{ description(company, lang) }}
+              </div>
             {% endif %}
-          </section>
         {% endfor %}
+        </section>
       {% endif %}
     </section>
   {% endfor %}
