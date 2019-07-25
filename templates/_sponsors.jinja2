@@ -194,6 +194,19 @@
         l'évènement PyConFR 2019, avec la volonté de mettre le monde académique
         en lien avec les acteurs de la communauté Python.
       </p>
+    {% elif company == 'Anybox' %}
+      <p>
+        Anybox est une entreprise en télétravail exclusif, organisée en Scrum
+        et Holacracy. Nous fournissons des services et des développements
+        spécifiques autour des <strong>ERP</strong> et <strong>applications
+        web</strong> en Python et des infrastructures Docker pour
+        l'<strong>hébergement</strong> et l'<strong>intégration
+        continue</strong>. Nous développons sur divers frameworks comme Odoo,
+        Django, Anyblok, Flask, Pyramid, VueJS. Nous intervenons également en
+        <strong>conseil</strong> auprès des TPE et PME pour les accompagner
+        dans leurs transitions numériques, agiles, organisationnelles ou
+        managériales.
+      </p>
     {% endif %}
 
   {% elif lang == 'en' %}
@@ -390,6 +403,14 @@
         of bringing the academic world into contact with the players in the
         python community.
       </p>
+    {% elif company == 'Anybox' %}
+      <p>
+        Anybox is a distributed remote-only company, organized as an
+        Holacracy. We provide services and custom developments around Python
+        business applications and Docker clusters for hosting and Continuous
+        Integration. Apart from our historical focus on Odoo, we also work on
+        frameworks such as Django or Anyblok.
+      </p>
     {% endif %}
 
   {% endif %}
@@ -415,6 +436,7 @@
   'Bronze': {
     'Oslandia': 'https://oslandia.com/',
     'Gandi': 'https://www.gandi.net',
+    'Anybox': 'https://www.anybox.fr/',
   },
 
   'Cœur' if lang == 'fr' else 'Heart': {
