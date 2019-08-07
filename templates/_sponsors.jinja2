@@ -257,6 +257,26 @@
         au Canada, une direction technique de pointe, 3 centres de R&amp;D et une
         présence boursière sur le marché Euronext depuis 1999.
       </p>
+    {% elif company == 'Invivoo' %}
+      <p>
+        Dans un contexte toujours plus complexe, s’appuyer sur des solutions
+        informatiques performantes est un enjeu vital pour nos clients. C’est
+        pourquoi INVIVOO améliore leur système d’information à tous les niveaux
+        – technique, méthodologique et organisationnel – en combinant
+        l’expertise métier à l’expertise technologique. INVIVOO est également
+        éditeur de la suite logicielle XComponent, destinée à la transformation
+        digitale des différents services d’une DSI pour mieux satisfaire les
+        clients et diminuer les tensions.
+      </p>
+      <p>
+        Véritable communauté d’échange au sein de l’entreprise, l’expertise
+        Python d’INVIVOO participe à différents événements au sein de son
+        écosystème, organise des workshops et formations autour des usages du
+        langage. Notre équipe se fera un plaisir d'échanger avec vous lors de
+        l'événement où dans nos locaux bordelais ! Retrouvez l'essentiel de nos
+        articles sur Python
+        ici : <a href="https://blog.invivoo.com/category/expertise-programmation-python/">blog</a>.
+      </p>
     {% endif %}
 
   {% elif lang == 'en' %}
@@ -511,6 +531,24 @@
         strong technical board, 3 R &amp; D centers and a presence in the
         Euronext stock market since 1999.
       </p>
+    {% elif company == 'Invivoo' %}
+      <p>
+        In a complex environment, leaning on performing IT solutions is a vital
+        stake for our clients.  That is the reason why at INVIVOO, we help our
+        client in improving their Information System at all levels: technical,
+        methodological and organizational, by combining functional and
+        technical expertise. Moreover, INVIVOO is the software publisher of the
+        XComponent suite intended for digital transformation of Information
+        System Services, to satisfy our clients and dicrease stress.
+      </p>
+      <p>
+        True corporate community, INVIVOO’s Python Expertise takes part of
+        several events of his ecosystem and organize workshops, training about
+        language’s practices. Want to learn more about us? Meet our team
+        during PyConFR or come at our Bordeaux Office! Find all the article
+        written by the expertise on
+        our <a href="https://blog.invivoo.com/category/expertise-programmation-python/">blog</a>!
+      </p>
     {% endif %}
 
   {% endif %}
@@ -524,6 +562,7 @@
 
   'Or' if lang == 'fr' else 'Gold': {
     'Clever Cloud': 'https://www.clever-cloud.com/',
+    'Invivoo': 'https://www.invivoo.com/',
   },
 
   'Argent' if lang == 'fr' else 'Silver': {
@@ -553,6 +592,8 @@
   },
   } %}
 
+  {% set png_logos = ('Invivoo',) %}
+
   {% if lang == 'fr' %}
     <p>
       Vous souhaitez nous soutenir ?
@@ -577,7 +618,7 @@
               <h4>{{ company }}</h4>
             {% endif %}
             <a href="{{ link }}" class="logo">
-              <img src="{{ url_for('static', filename='images/partners/{}.svg'.format(company.replace('/', '-'))) }}" alt="Logo {{ company }}" />
+              <img src="{{ url_for('static', filename='images/partners/{}.{}'.format(company.replace('/', '-'), 'png' if company in png_logos else 'svg')) }}" alt="Logo {{ company }}" />
             </a>
             {% if not only_logo and level not in ('Heart', 'Partners', 'Cœur', 'Partenaires') %}
               {{ description(company, lang) }}
