@@ -2,7 +2,14 @@
 
 {% block content %}
   <article>
-    <h2>Nous aider avant et pendant l'événement</h2>
+    <hgroup>
+      <h2>Nous soutenir</h2>
+      <hr/>
+      <img src="{{ url_for('static', filename='svg/thumb.svg') }}" alt='Le lieu'/>
+    </hgroup>
+  </article>
+  <article>
+    <h3>Nous aider avant et pendant l'événement</h3>
 
     <p>
       Si vous souhaitez nous aider pour la préparation de l'événement, et/ou
@@ -16,7 +23,7 @@
   </article>
 
   <article>
-    <h2>Financer PyConFr</h2>
+    <h3>Financer PyConFr</h3>
 
     <p>
       Le mécénat nous permet chaque année de couvrir les frais comme la
@@ -108,23 +115,24 @@
       </tbody>
     </table>
 
-    <p>
+
+    <section class="level-support" >
+      <p>
       Trois niveaux « Platine » sont également disponibles. Ces niveaux
       spéciaux comportent les bénéfices du niveau « Or », plus une contrepartie
       particulière :
-    </p>
+      </p>
+      <hr/>
+      <h4>Transcription (4000 €)</h4>
+      <p>Votre logo sur l'écran de transcription textuelle et sur les vidéos sous-titrées grâce aux transcriptions.</p>
+      <h4>Boissons et viennoiseries (4000 €)</h4>
+      <p>Votre logo sur les tables accueillant les viennoiseries et les boissons.</p>
+      <h4>Vidéo (6000 €)</h4>
+      <p>Votre logo au début des captations vidéos.</p>
+      <br/>
+      <p><b>Les contreparties sont effectives dès réception du réglement.<b/></p>
+    </section>
 
-    <dl>
-      <dt>Transcription (4000 €)</dt>
-      <dd>Votre logo sur l'écran de transcription textuelle et sur les vidéos sous-titrées grâce aux transcriptions.</dd>
-      <dt>Boissons et viennoiseries (4000 €)</dt>
-      <dd>Votre logo sur les tables accueillant les viennoiseries et les boissons.</dd>
-      <dt>Vidéo (6000 €)</dt>
-      <dd>Votre logo au début des captations vidéos.</dd>
-    </dl>
 
-    <p>
-      Les contreparties sont effectives dès réception du réglement.
-    </p>
   </article>
 {% endblock content %}

@@ -20,8 +20,11 @@
   </article>
 
   <article>
-    <h2>Schedule</h2>
-
+    <hgroup>
+      <h2>Schedule</h2>
+      <hr/>
+      <img src="{{ url_for('static', filename='svg/agenda.svg') }}" alt='Programme'/>
+    </hgroup>
     <section>
       <h3>Participative Coding ("Sprints")</h3>
       <p>
@@ -50,41 +53,53 @@
   </article>
 
   <article>
-    <h2>AFPy</h2>
-    <ul>
-      <li>
+    <hgroup>
+        <h2>AFPy</h2>
+        <hr/>
+      <img src="{{ url_for('static', filename='svg/pyth.svg') }}" alt='Programme'/>
+    </hgroup>
+    <section class="d-flex">
+      <div class="card">
         We promote the Python programming language among the widest possible
         audience.
-      </li>
-      <li>
+      </div>
+      <div class="card">
         We diffuse our knowledge and are open to external contributions.
-      </li>
-      <li>
-        Solidarity and democracy increase the potential of each one of us.
-      </li>
-    </ul>
+      </div>
+      <div class="card">
+        Sodivdarity and democracy increase the potential of each one of us.
+      </div>
+    </section>
   </article>
 
   <article>
-    <h2>The Place</h2>
-    <address>
-      Université de Bordeaux
-    </address>
-    <ul>
-      <li>
-        <a href="{{ url_for('page', name='venue', lang=lang) }}">
-          More Details
-        </a>
-      </li>
-    </ul>
+    <hgroup>
+        <h2>The Place</h2>
+        <hr/>
+      <img src="{{ url_for('static', filename='svg/map.svg') }}" alt='Programme'/>
+    </hgroup>
+    <section class="column center">
+      <address>
+        Université de Bordeaux
+      </address>
+      <a class="button" href="{{ url_for('page', name='venue', lang=lang) }}">
+        More Details
+      </a>
+    </section>
   </article>
 
   <article>
-    <h2>Our Sponsors</h2>
-    {{ sponsors(lang, only_logo=True) }}
-    <p>
-      The local team is available to answer your questions about the event
-      at <a href="mailto:contact@pycon.fr">contact@pycon.fr</a>.
-    </p>
+    <hgroup>
+      <h2>Our Sponsors</h2>
+      <hr/>
+      <img src="{{ url_for('static', filename='svg/cup.svg') }}" alt='Programme'/>
+    </hgroup>
+    <section class="column center">
+      {{ sponsors(lang, only_logo=True) }}
+      <p>
+        The local team is available to answer your questions about the event
+        at <a href="mailto:contact@pycon.fr">contact@pycon.fr</a>.
+      </p>
+    </section>
   </article>
 {% endblock content %}

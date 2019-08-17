@@ -1,6 +1,12 @@
 {% extends '_layout.jinja2' %}
 
 {% block content %}
+<hgroup>
+    <h2>Actualités</h2>
+    <hr/>
+    <img src="{{ url_for('static', filename='svg/news.svg') }}" alt='Le lieu'/>
+</hgroup>
+<section>
   <article>
     <h2>PyConFr 2019</h2>
 
@@ -39,7 +45,7 @@
 
     <p>
       If you already want to organize your journey, we have prepared the
-      <a href=" href="{{ url_for('page', name='venue', lang=lang) }}">Venue</a> page.
+      <a href="{{ url_for('page', name='venue', lang=lang) }}">Venue</a> page.
     </p>
 
     <p>
@@ -47,4 +53,5 @@
       follow us on <a href="https://twitter.com/pyconfr">Twitter</a>.
     </p>
   </article>
+</section>
 {% endblock content %}

@@ -2,7 +2,11 @@
 
 {% block content %}
   <article>
-    <h2>Bourses</h2>
+    <hgroup>
+      <h2>Bourses</h2>
+      <hr/>
+      <img src="{{ url_for('static', filename='svg/coin.svg') }}" alt='Le lieu'/>
+    </hgroup>
     <p>
       L'AFPy propose des bourses pour les étudiant·e·s ou les personnes dont
       les moyens ne permettent pas de venir à PyConFr. Pour faire une demande,
@@ -10,22 +14,24 @@
       (<a href="mailto:tresorerie@afpy.org">tresorerie@afpy.org</a>)
       expliquant brièvement :
     </p>
-    <ul>
-      <li>
-        votre statut actuel (étudiant, en recherche d'emploi…) ;
-      </li>
-      <li>
-        la raison de votre participation à la conférence (assister aux
-        conférences, présentation d'un projet, participation à un sprint…) ;
-      </li>
-      <li>
-        une estimation approximative du coût de votre participation à PyConFr
-        (transport et hébergement) ;
-      </li>
-      <li>
-        toute autre information que vous jugez nécessaire.
-      </li>
-    </ul>
+    <section>
+        <ul>
+          <li>
+            votre statut actuel (étudiant, en recherche d'emploi…) ;
+          </li>
+          <li>
+            la raison de votre participation à la conférence (assister aux
+            conférences, présentation d'un projet, participation à un sprint…) ;
+          </li>
+          <li>
+            une estimation approximative du coût de votre participation à PyConFr
+            (transport et hébergement) ;
+          </li>
+          <li>
+            toute autre information que vous jugez nécessaire.
+          </li>
+        </ul>
+    </section>
     <p>
       Vous ne devez pas dépasser les 400 mots dans votre demande. Les personnes
       acceptées recevront un maximum de 200 € pour un trajet en Europe, ou un
