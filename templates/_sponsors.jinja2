@@ -1,8 +1,9 @@
 {% macro description(company, lang) %}
+  <div class="description">
+
   {% if lang == 'fr' %}
 
     {% if company == 'Clever Cloud' %}
-    <div class="description"> 
       <p>
         Clever Cloud est une entreprise de PaaS Française. Nous aidons les
         développeurs à déployer leurs applications en production avec une
@@ -11,10 +12,7 @@
         deployment. Nous construisions un service facile à utiliser, sans
         verrou éditeur et pouvant grossir selon vos besoins.
       </p>
-    </div>
     {% elif company == 'Logilab' %}
-    <div class="description"> 
-      <p>
       <p>
         Logilab <em>développe</em> des <em>logiciels</em>, et propose
         du <em>conseil</em> et des <em>formations</em> de haut niveau dans les
@@ -45,9 +43,7 @@
         sites <a href="https://logilab.org">logilab.org</a> et
         <a href="https://cubicweb.org">cubicweb.org</a>.
       </p>
-    </div>
     {% elif company == 'Entr\'ouvert' %}
-    <div class="description"> 
       <p>
         Entr'ouvert est une société coopérative attachée à la démocratie
         d'entreprise.  Les salariés possèdent l'entreprise à parts égales, les
@@ -70,9 +66,7 @@
         solution est développée en Python, sur le cadriciel Django ; outils
         quasi exclusifs dès qu'il faut développer quelque chose à Entr'ouvert.
       </p>
-    </div>
     {% elif company == 'PeopleDoc' %}
-    <div class="description"> 
       <p>
         PeopleDoc, plateforme SaaS de digitalisation RH aide les entreprises à
         simplifier et fluidifier les processus administratifs entre RH et
@@ -91,9 +85,7 @@
         PeopleDoc affiche aujourd’hui un taux de satisfaction et de rétention
         client de 100 %.
       </p>
-    </div>
     {% elif company == 'Oslandia' %}
-    <div class="description"> 
       <p>
         Oslandia est une société innovante spécialisée en architecture SIG Open
         Source. Créée il y a 10 ans, Oslandia est une entreprise en croissance
@@ -118,9 +110,7 @@
         Web : <a href="https://oslandia.com/">https://oslandia.com/</a> -
         Email : <a href="mailto:infos@oslandia.com">infos@oslandia.com</a>
       </p>
-    </div>
     {% elif company == 'Yaal' %}
-    <div class="description"> 
       <p>
         Yaal conçoit en agilité des logiciels métiers, web et mobiles. Nous
         pouvons développer « à façon » ou adapter des solutions existantes à
@@ -160,9 +150,7 @@
         organisations du développement durable, en phase d'amorçage ou de
         croissance, rencontrons-nous !
       </p>
-    </div>
     {% elif company == 'Gandi' %}
-    <div class="description"> 
       <p>
         Créé en mars 2000, Gandi opère sur 3 continents, avec plus de 140
         salariés répartis entre Paris, Luxembourg, Munich, San Francisco et
@@ -191,9 +179,7 @@
         grande flexibilité quant au dimensionnement des serveurs et une
         sécurité optimale des données.
       </p>
-    </div>
     {% elif company == 'Université de Bordeaux' %}
-    <div class="description"> 
       <p>
         Forte de ses 55 000 étudiants, 4 000 enseignants et chercheurs et 3 000
         personnels, l'Université de Bordeaux (UB) est un acteur majeur du
@@ -210,9 +196,7 @@
         l'évènement PyConFR 2019, avec la volonté de mettre le monde académique
         en lien avec les acteurs de la communauté Python.
       </p>
-    </div>
     {% elif company == 'Anybox' %}
-    <div class="description"> 
       <p>
         Anybox est une entreprise en télétravail exclusif, organisée en Scrum
         et Holacracy. Nous fournissons des services et des développements
@@ -225,9 +209,7 @@
         dans leurs transitions numériques, agiles, organisationnelles ou
         managériales.
       </p>
-    </div>
     {% elif company == 'IT Link' %}
-    <div class="description"> 
       <p>
         <strong>
           IT Link, première Entreprise de Services du Numérique spécialiste des
@@ -277,9 +259,7 @@
         au Canada, une direction technique de pointe, 3 centres de R&amp;D et une
         présence boursière sur le marché Euronext depuis 1999.
       </p>
-    </div>
     {% elif company == 'Invivoo' %}
-    <div class="description"> 
       <p>
         Dans un contexte toujours plus complexe, s’appuyer sur des solutions
         informatiques performantes est un enjeu vital pour nos clients. C’est
@@ -299,22 +279,18 @@
         articles sur Python
         ici : <a href="https://blog.invivoo.com/category/expertise-programmation-python/">blog</a>.
       </p>
-    </div>
     {% endif %}
 
   {% elif lang == 'en' %}
 
     {% if company == 'Clever Cloud' %}
-    <div class="description"> 
       <p>
         Clever Cloud help developers to deploy and run their apps with
         bulletproof infrastructure, automatic scaling, fair pricing and other
         cool features. We aim to make an easy-to-use service, without any
         vendor lock-in and able to grow with your needs.
       </p>
-    </div>
     {% elif company == 'Logilab' %}
-    <div class="description"> 
       <p>
         <a href="https://www.logilab.fr/">Logilab</a> is an IT company
         specialized in advanced and scientific computing.
@@ -347,9 +323,7 @@
         released as open source on Logilab's free software projects site
         <a href="http://www.logilab.org">http://www.logilab.org</a>.
       </p>
-    </div>
     {% elif company == 'Entr\'ouvert' %}
-    <div class="description"> 
       <p>
         Entr'ouvert is a cooperative company attached to the principle of
         company democracy. Employees own the company in equal shares, decisions
@@ -371,9 +345,7 @@
         tools when something needs to be written, be it a big software or a
         little script.
       </p>
-    </div>
     {% elif company == 'PeopleDoc' %}
-    <div class="description"> 
       <p>
         PeopleDoc is on a mission to revolutionize how every HR function
         provide services to their employees.
@@ -392,9 +364,7 @@
         Ultimate Software. Ultimate Software is a Leader for Cloud HCM
         Applications.
       </p>
-    </div>
     {% elif company == 'Oslandia' %}
-    <div class="description"> 
       <p>
         Oslandia is a high-tech company that offers strong technical expertise
         on open source GIS architectures. Oslandia is established since 10
@@ -424,9 +394,7 @@
         Web: <a href="https://oslandia.com/">https://oslandia.com/</a> -
         Email: <a href="mailto:infos@oslandia.com">infos@oslandia.com</a>
       </p>
-    </div>
     {% elif company == 'Yaal' %}
-    <div class="description">
       <p>
         Yaal develops agile web and mobile software. We can design bespoke
         solutions or adapt existing products to your needs and means.
@@ -463,9 +431,7 @@
         If your project needs a reliable and socially minded tech partner then
         let’s meet!
       </p>
-    </div>
     {% elif company == 'Gandi' %}
-    <div class="description"> 
       <p>
         Founded in 2000, Gandi operates across three continents with 140
         employees in offices in Paris, Luxemburg, Munich, San Francisco, and
@@ -493,9 +459,7 @@
         These professional offerings combine the power of dedicated resources,
         great flexibility in server sizing and optimal data security.
       </p>
-    </div>
     {% elif company == 'Université de Bordeaux' %}
-    <div class="description"> 
       <p>
         With its 55,000 students, 4,000 teachers and researchers and 3,000
         staff, the University of Bordeaux (UB) is a major Nouvelle-Aquitaine
@@ -511,9 +475,7 @@
         of bringing the academic world into contact with the players in the
         python community.
       </p>
-    </div>
     {% elif company == 'Anybox' %}
-    <div class="description"> 
       <p>
         Anybox is a distributed remote-only company, organized as an
         Holacracy. We provide services and custom developments around Python
@@ -521,9 +483,7 @@
         Integration. Apart from our historical focus on Odoo, we also work on
         frameworks such as Django or Anyblok.
       </p>
-    </div>
     {% elif company == 'IT Link' %}
-    <div class="description"> 
       <p>
         <strong>
           IT Link, the first digital services company specialized in Connected
@@ -573,9 +533,7 @@
         strong technical board, 3 R &amp; D centers and a presence in the
         Euronext stock market since 1999.
       </p>
-    </div>
     {% elif company == 'Invivoo' %}
-    <div class="description"> 
       <p>
         In a complex environment, leaning on performing IT solutions is a vital
         stake for our clients.  That is the reason why at INVIVOO, we help our
@@ -593,10 +551,10 @@
         written by the expertise on
         our <a href="https://blog.invivoo.com/category/expertise-programmation-python/">blog</a>!
       </p>
-    </div>
     {% endif %}
 
   {% endif %}
+  </div>
 {% endmacro %}
 
 {% macro sponsors(lang, only_logo=False) %}
