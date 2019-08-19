@@ -2,6 +2,13 @@
 
 {% block content %}
   <article>
+    <hgroup>
+      <h2>Support us</h2>
+      <hr/>
+      <img src="{{ url_for('static', filename='svg/thumb.svg') }}" alt='Le lieu'/>
+    </hgroup>
+  </article>
+  <article>
     <h2>Help Us Before and During the Event</h2>
 
     <p>
@@ -104,23 +111,20 @@
         </tr>
       </tbody>
     </table>
-
-    <p>
-      Three "Platinum" levels are also available. These special levels include
-      the benefits of the "Gold" level, and an additional benefit:
-    </p>
-
-    <dl>
-      <dt>Transcript (4000 €)</dt>
-      <dd>Your logo on the transcription screen and on subtitled videos.</dd>
-      <dt>Drinks and Viennoiseries (4000 €)</dt>
-      <dd>Your logo on tables with viennoiseries and drinks.</dd>
-      <dt>Video (6000 €)</dt>
-      <dd>Your logo at the beginning of video recordings</dd>
-    </dl>
-
-    <p>
-      Benefits are available as soon as the invoice is paid.
-    </p>
+    <section class="level-support" >
+      <p>
+        Three "Platinium" levels are also available. These special levels include
+        the benefits of the "Gold" level, and an additional benefit:
+      </p>
+      <hr/>
+      <h4>Transcript (4000 €)</h4>
+      <p>Your logo on the transcription screen and on subtitled videos.</p>
+      <h4>Drinks and Viennoiseries (4000 €)</h4>
+      <p>Your logo on tables with viennoiseries and drinks.</p>
+      <h4>Video (6000 €)</h4>
+      <p>Your logo at the beginning of video recordings</p>
+      <br/>
+      <p><b>Benefits are available as soon as the invoice is paid.<b/></p>
+    </section>
   </article>
 {% endblock content %}

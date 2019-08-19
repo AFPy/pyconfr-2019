@@ -2,7 +2,11 @@
 
 {% block content %}
   <article>
-    <h2>Sponsors</h2>
+    <hgroup>
+      <h2>Sponsors</h2>
+      <hr/>
+      <img src="{{ url_for('static', filename='svg/cup.svg') }}" alt='Le lieu'/>
+    </hgroup>
     {{ sponsors(lang) }}
   </article>
 {% endblock content %}

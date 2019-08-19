@@ -20,8 +20,11 @@
   </article>
 
   <article>
-    <h2>Programme</h2>
-
+    <hgroup>
+      <h2>Programme</h2>
+      <hr/>
+      <img src="{{ url_for('static', filename='svg/agenda.svg') }}" alt='Programme'/>
+    </hgroup>
     <section>
       <h3>Développement participatif (« sprints »)</h3>
       <p>
@@ -51,44 +54,56 @@
   </article>
 
   <article>
-    <h2>AFPy</h2>
-    <ul>
-      <li>
-        Nous assurons la promotion du langage de programmation Python auprès du
-        plus large public possible.
-      </li>
-      <li>
-        Nous diffusons nos connaissances et sommes ouverts aux apports
-        extérieurs.
-      </li>
-      <li>
-        La solidarité et la démocratie élargissent les horizons et accroissent
-        le potentiel de chacun.
-      </li>
-    </ul>
+    <hgroup>
+      <h2>AFPy</h2>
+      <hr/>
+      <img src="{{ url_for('static', filename='svg/pyth.svg') }}" alt='Afpy'/>
+    </hgroup>
+    <section class="d-flex">
+      <div class="card">
+          <p>Nous assurons la promotion du langage de programmation Python auprès du
+          plus large pubdivc possible.</p>
+      </div>
+      <div class="card">
+          <p>Nous diffusons nos connaissances et sommes ouverts aux apports
+          extérieurs.</p>
+      </div>
+      <div class="card">
+          <p>La sodivdarité et la démocratie élargissent les horizons et accroissent
+          le potentiel de chacun.</p>
+      </div>
+    </section>
   </article>
 
   <article>
-    <h2>Le lieu</h2>
-    <address>
-      Université de Bordeaux
-    </address>
-    <ul>
-      <li>
-        <a href="{{ url_for('page', name='venue', lang=lang) }}">
-          Plus de détails
-        </a>
-      </li>
-    </ul>
+    <hgroup>
+      <h2>Le lieu</h2>
+      <hr/>
+      <img src="{{ url_for('static', filename='svg/map.svg') }}" alt='Le lieu'/>
+    </hgroup>
+    <section class="column center">
+      <address>
+        Université de Bordeaux
+      </address>
+      <a class="button" href="{{ url_for('page', name='venue', lang=lang) }}">
+        Plus de détails
+      </a>
+    </section>
   </article>
 
   <article>
-    <h2>Nos soutiens</h2>
-    {{ sponsors(lang, only_logo=True) }}
-    <p>
-      L'équipe locale est disponible pour répondre à vos questions sur
-      l'événement à
-      l'adresse <a href="mailto:contact@pycon.fr">contact@pycon.fr</a>.
-    </p>
+    <hgroup>
+      <h2>Nos soutiens</h2>
+      <hr/>
+      <img src="{{ url_for('static', filename='svg/cup.svg') }}" alt='Afpy'/>
+    </hgroup>
+    <section class="column center">
+      {{ sponsors(lang, only_logo=True) }}
+      <p>
+        L'équipe locale est disponible pour répondre à vos questions sur
+        l'événement à
+        l'adresse <a href="mailto:contact@pycon.fr">contact@pycon.fr</a>.
+      </p>
+    </section>
   </article>
 {% endblock content %}

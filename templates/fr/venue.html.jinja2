@@ -1,6 +1,11 @@
 {% extends '_layout.jinja2' %}
 
 {% block content %}
+  <hgroup>
+    <h2>Le lieu</h2>
+    <hr/>
+    <img src="{{ url_for('static', filename='svg/map.svg') }}" alt='Le lieu'/>
+  </hgroup>
   <article>
     <h2>Adresse</h2>
     <p>
