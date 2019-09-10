@@ -678,6 +678,7 @@
   'Cœur' if lang == 'fr' else 'Heart': {
     'Mergify': 'https://mergify.io/',
     'OctopusMind': 'https://www.octopusmind.info/',
+    'Alves-Info': '',
   },
 
   'Partenaires' if lang == 'fr' else 'Partners':
@@ -714,9 +715,13 @@
               <div class="sponsor">
                 <h4>{{ company }}</h4>
             {% endif %}
-            <a href="{{ link }}" class="logo">
+            {% if link %}
+              <a href="{{ link }}" class="logo">
+            {% endif %}
               <img src="{{ url_for('static', filename='images/partners/{}.{}'.format(company.replace('/', '-'), 'png' if company in png_logos else 'svg')) }}" alt="Logo {{ company }}" />
-            </a>
+            {% if link %}
+              </a>
+            {% endif %}
             {% if not only_logo and level not in ('Heart', 'Partners', 'Cœur', 'Partenaires') %}
                 {{ description(company, lang) }}
               </div>
