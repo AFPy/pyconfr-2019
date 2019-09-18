@@ -410,6 +410,30 @@
         <a href="mailto:bonjour%20at%20tracim%20point%20fr">Contactez-nous</a>
         et discutons de l'opportunité de collaborer !
       </p>
+    {% elif company == 'JetBrains' %}
+      <p>
+        JetBrains crée des solutions logicielles qui rendent les développeurs
+        plus efficaces et productifs. En automatisant les vérifications et
+        corrections de routine, et en favorisant l’adoption des bonnes
+        pratiques, nos outils leur permettent d’avoir plus de temps à consacrer
+        à l’amélioration de leurs compétences et à la conception. Le code est
+        notre passion et depuis plus de 18 ans notre objectif est de proposer
+        les outils les plus fiables et performants au monde.
+      </p>
+      <p>
+        Notre EDI PyCharm fournit une gamme complète d’outils pour le
+        développement Python, Web et scientifique. Son édition gratuite et open
+        source, PyCharm Community Edition, est conçue pour le codage Python
+        pur. PyCharm Professional Edition s’adresse aux développeurs Python et
+        Web professionnels. PyCharm Educational Edition aide les débutants à se
+        familiariser facilement et rapidement avec Python.
+      </p>
+      <p>
+        Aujourd’hui, JetBrains emploie plus de 1000 personnes dans le monde et
+        compte plus de 5 millions de clients dans 225 pays. Kotlin, notre
+        langage de programmation, est devenu un langage officiel pour le
+        développement Android en 2017.
+      </p>
     {% endif %}
 
   {% elif lang == 'en' %}
@@ -813,6 +837,7 @@
         associations. <a href="mailto:bonjour%20at%20tracim%20dot%20fr">Contact
         us</a> and let's discuss the opportunity to collaborate!
       </p>
+    {% elif company == 'JetBrains' %}
     {% endif %}
 
   {% endif %}
@@ -828,6 +853,7 @@
   'Or' if lang == 'fr' else 'Gold': {
     'Clever Cloud': 'https://www.clever-cloud.com/',
     'Invivoo': 'https://www.invivoo.com/',
+    'JetBrains': 'https://www.jetbrains.com/',
   },
 
   'Argent' if lang == 'fr' else 'Silver': {
