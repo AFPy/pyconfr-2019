@@ -22,7 +22,7 @@ def page(name='index', lang='fr'):
         page_name=name, lang=lang)
 
 
-@app.route('/schedule/')
+@app.route('/schedule.html')
 def schedule():
     with urlopen('https://cfp-2019.pycon.fr/schedule/html/') as fd:
         data = fd.read()
