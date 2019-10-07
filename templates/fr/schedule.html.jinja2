@@ -6,16 +6,77 @@
     <hr/>
     <img src="{{ url_for('static', filename='svg/agenda.svg') }}" alt='Programme'/>
   </hgroup>
+
   <article>
-    <h2>Conférences et ateliers</h2>
+    <h3>Calendrier</h3>
     <p>
-      Samedi 2 et dimanche 3 novembre.
+      <strong>
+        Le calendrier est provisoire et peut être modifié jusqu’au début de la
+        conférence.
+      </strong>
     </p>
     <p>
-      <em>
-        L’appel à conférences est désormais terminé. Le programme sera
-        disponible dans les prochains jours.
-      </em>
+      Il sera disponible dans divers formats lors de l’événement.
+    </p>
+    <iframe src="{{ url_for('schedule') }}"></iframe>
+    <div class="column center">
+      <a class="button" href="https://cfp-2019.pycon.fr/schedule/">Voir en plein écran</a>
+    </div>
+  </article>
+
+  <article id="register">
+    <h3>Inscriptions</h3>
+    <p>
+      L’accès aux sprints, aux conférences et aux ateliers de PyConFr est
+      gratuit.
+    </p>
+    <p>
+      Cependant, <strong>l’inscription est obligatoire pour tous</strong>, y
+      compris membres du comité d’organisation, bénévoles, conférenciers et
+      sponsors.
+    </p>
+    <p>
+      Les inscriptions sont ouvertes jusqu’à la fin de l’événement, dans la
+      limite de :
+    </p>
+    <ul>
+      <li>200 personnes pour les sprints,</li>
+      <li>1 000 personnes pour les conférences et ateliers,</li>
+      <li>125 personnes pour <a href="#dinner">le repas du samedi soir</a>.</li>
+    </ul>
+    <p>
+      Il est possible lors de cette inscription de :
+    </p>
+    <ul>
+      <li>
+        pré-réserver des t-shirts (10 €), qui seront également vendus lors de
+        la conférence mais en nombre limité,
+      </li>
+      <li>
+        vous inscrire pour le repas du samedi soir (25 €).
+      </li>
+    </ul>
+    <p>
+      Vous pouvez également soutenir <a href="https://afpy.org/">l’AFPy</a>,
+      qui organise chaque année cet événement,
+      en <a href="https://www.helloasso.com/associations/afpy/collectes/dons">faisant
+      un don</a>. Si vous souhaitez avoir une voix à son assemblée générale,
+      qui aura lieu le dimanche matin, vous
+      devez <a href="https://www.afpy.org/adhesions">devenir membre</a> avant
+      le 18 octobre.
+    </p>
+    <div class="column center">
+      <a class="button" href="https://www.helloasso.com/associations/afpy/evenements/pyconfr-2019">S’inscrire</a>
+    </div>
+  </article>
+
+  <article>
+    <h3>Développement participatif (« sprints »)</h3>
+    <p>
+      Jeudi 31 octobre et vendredi 1<sup>er</sup> novembre.
+    </p>
+    <p>
+      <em>Le détail des sprints sera mis en ligne prochainement.</em>
     </p>
 
     <!--
@@ -27,15 +88,12 @@
   </article>
 
   <article>
-    <h2>Développement participatif (« sprints »)</h2>
+    <h3>Conférences et ateliers</h3>
     <p>
-      Jeudi 31 octobre et vendredi 1<sup>er</sup> novembre.
+      Samedi 2 et dimanche 3 novembre.
     </p>
     <p>
-      <em>
-        L’appel à conférences est désormais terminé. Le programme sera
-        disponible dans les prochains jours.
-      </em>
+      <em>Le détail des conférences et ateliers sera mis en ligne prochainement.</em>
     </p>
 
     <!--
@@ -44,5 +102,36 @@
       <p>Présentation</p>
     </section>
     -->
+  </article>
+
+  <article id="dinner">
+    <h3>Repas du samedi soir</h3>
+    <p>
+      Un repas est organisé le samedi soir
+      à <a href="http://cap-sciences.net/">Cap Sciences</a>, uniquement pour
+      les personnes ayant choisi l’option en ligne lors de leur inscription.
+    </p>
+    <p>
+      Ce repas comprend :
+    </p>
+    <ul>
+      <li>
+        un cocktail dînatoire comprenant divers petits fours (dont végétariens
+        et vegan) et des boissons sans alcool,
+      </li>
+      <li>
+        un accès à l’exposition
+        <a href="http://cap-sciences.net/au-programme/exposition/robots">Robots</a>,
+      </li>
+      <li>
+        un atelier <a href="https://www.arbalet-project.org/frontage/">Arbalet
+        Frontage</a> sur la façade de Cap Sciences (ordinateur portable
+        requis).
+      </li>
+    </ul>
+    <p>
+      L’achat de boissons alcoolisées (non comprises dans le prix) est possible
+      lors du repas.
+    </p>
   </article>
 {% endblock content %}

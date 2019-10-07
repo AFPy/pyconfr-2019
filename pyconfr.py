@@ -1,3 +1,5 @@
+from urllib.request import urlopen
+
 from flask import Flask, abort, render_template
 from flask_frozen import Freezer
 from sassutils.wsgi import SassMiddleware
@@ -18,6 +20,13 @@ def page(name='index', lang='fr'):
     return render_template(
         '{lang}/{name}.html.jinja2'.format(name=name, lang=lang),
         page_name=name, lang=lang)
+
+
+@app.route('/schedule/')
+def schedule():
+    with urlopen('https://cfp-2019.pycon.fr/schedule/html/') as fd:
+        data = fd.read()
+    return render_template('schedule.html.jinja2', data=data.decode('utf-8'))
 
 
 @app.cli.command('freeze')
