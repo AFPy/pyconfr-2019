@@ -1,5 +1,6 @@
 {% extends '_layout.jinja2' %}
 
+{% set days = {'2019-11-02': 'Samedi', '2019-11-03': 'Dimanche'} %}
 {% set titles = {'conference': 'Conférences', 'workshop': 'Ateliers', 'sprint': 'Sprints', 'keynote': 'Plénières'} %}
 
 {% block content %}
@@ -14,9 +15,11 @@
       <h3>{{ talk.title }}</h3>
       <p>
         Par {{ talk.person }}
-        {% if category != 'sprint' %}
+        {% if category == 'sprint' %}
+          − Jeudi et vendredi de 10 h 00 à 18 h 00
+        {% else %}
           − Salle {{ talk.room }}
-          − {{ talk.start }}
+          − {{ days[talk.day] }} à {{ talk.start.replace(':', ' h ') }}
         {% endif %}
       </p>
       {{ talk.description | safe }}

@@ -1,5 +1,6 @@
-from xml.etree import ElementTree
+from datetime import datetime
 from urllib.request import urlopen
+from xml.etree import ElementTree
 
 from flask import Flask, abort, render_template
 from flask_frozen import Freezer
@@ -28,13 +29,15 @@ def talks(lang, category):
     talks = []
     with urlopen('https://cfp-2019.pycon.fr/schedule/xml/') as fd:
         tree = ElementTree.fromstring(fd.read().decode('utf-8'))
-    for event in tree.findall('.//event'):
-        talk = {child.tag: child.text for child in event}
-        if talk['type'] != category:
-            continue
-        if 'description' in talk:
-            talk['description'] = Markdown().convert(talk['description'])
-        talks.append(talk)
+    for day in tree.findall('.//day'):
+        for event in day.findall('.//event'):
+            talk = {child.tag: child.text for child in event}
+            talk['day'] = day.attrib['date']
+            if talk['type'] != category:
+                continue
+            if 'description' in talk:
+                talk['description'] = Markdown().convert(talk['description'])
+            talks.append(talk)
     return render_template(
         '{lang}/talks.html.jinja2'.format(lang=lang),
         category=category, talks=talks, lang=lang)
