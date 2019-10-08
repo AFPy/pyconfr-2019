@@ -18,9 +18,17 @@
     <p>
       Il sera disponible dans divers formats lors de l’événement.
     </p>
+    <p>
+      Vous pouvez également lire la description des
+      <a href="{{ url_for('talks', lang=lang, category='keynote') }}">plénières</a>, des
+      <a href="{{ url_for('talks', lang=lang, category='conference') }}">conférences</a>, des
+      <a href="{{ url_for('talks', lang=lang, category='workshop')}}">ateliers</a> et des
+      <a href="{{ url_for('talks', lang=lang, category='sprint') }}">sprints</a>.
+    </p>
+
     <iframe src="{{ url_for('schedule') }}"></iframe>
     <div class="column center">
-      <a class="button" href="https://cfp-2019.pycon.fr/schedule/">Voir en plein écran</a>
+      <a class="button" href="https://cfp-2019.pycon.fr/schedule/">Plein écran</a>
     </div>
   </article>
 
@@ -68,40 +76,6 @@
     <div class="column center">
       <a class="button" href="https://www.helloasso.com/associations/afpy/evenements/pyconfr-2019">S’inscrire</a>
     </div>
-  </article>
-
-  <article>
-    <h3>Développement participatif (« sprints »)</h3>
-    <p>
-      Jeudi 31 octobre et vendredi 1<sup>er</sup> novembre.
-    </p>
-    <p>
-      <em>Le détail des sprints sera mis en ligne prochainement.</em>
-    </p>
-
-    <!--
-    <section>
-      <h3>Sujet</h3>
-      <p>Présentation</p>
-    </section>
-    -->
-  </article>
-
-  <article>
-    <h3>Conférences et ateliers</h3>
-    <p>
-      Samedi 2 et dimanche 3 novembre.
-    </p>
-    <p>
-      <em>Le détail des conférences et ateliers sera mis en ligne prochainement.</em>
-    </p>
-
-    <!--
-    <section>
-      <h3>Sujet</h3>
-      <p>Présentation</p>
-    </section>
-    -->
   </article>
 
   <article id="dinner">

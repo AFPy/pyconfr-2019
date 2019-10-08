@@ -1,0 +1,25 @@
+{% set titles = {'conference': 'Talks', 'workshop': 'Workshops', 'sprint': 'Sprints', 'keynote': 'Keynotes'} %}
+{% set title = titles[category] %}
+{% extends '_layout.jinja2' %}
+
+{% block content %}
+  <hgroup>
+    <h2>{{ title }}</h2>
+    <hr/>
+    <img src="{{ url_for('static', filename='svg/agenda.svg') }}" alt='Programme'/>
+  </hgroup>
+
+  {% for talk in talks %}
+    <article>
+      <h3>{{ talk.title }}</h3>
+      <p>
+        By {{ talk.person }}
+        {% if category != 'sprint' %}
+          − Room {{ talk.room }}
+          − {{ talk.start }}
+        {% endif %}
+      </p>
+      {{ talk.description | safe }}
+    </article>
+  {% endfor %}
+{% endblock content %}

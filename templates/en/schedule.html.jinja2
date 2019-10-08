@@ -18,6 +18,13 @@
     <p>
       It will be available in multiple formats during the event.
     </p>
+    <p>
+      You can also read the description of
+      <a href="{{ url_for('talks', lang=lang, category='keynote') }}">keynotes</a>,
+      <a href="{{ url_for('talks', lang=lang, category='conference') }}">talks</a>,
+      <a href="{{ url_for('talks', lang=lang, category='workshop')}}">workshops</a> and
+      <a href="{{ url_for('talks', lang=lang, category='sprint') }}">sprints</a>.
+    </p>
     <iframe src="{{ url_for('schedule') }}"></iframe>
     <div class="column center">
       <a class="button" href="https://cfp-2019.pycon.fr/schedule/">Fullscreen</a>

@@ -1,7 +1,9 @@
+from xml.etree import ElementTree
 from urllib.request import urlopen
 
 from flask import Flask, abort, render_template
 from flask_frozen import Freezer
+from markdown2 import Markdown
 from sassutils.wsgi import SassMiddleware
 
 app = Flask(__name__, static_url_path='/2019/static')
@@ -20,6 +22,22 @@ def page(name='index', lang='fr'):
     return render_template(
         '{lang}/{name}.html.jinja2'.format(name=name, lang=lang),
         page_name=name, lang=lang)
+
+@app.route('/2019/<lang>/talks/<category>.html')
+def talks(lang, category):
+    talks = []
+    with urlopen('https://cfp-2019.pycon.fr/schedule/xml/') as fd:
+        tree = ElementTree.fromstring(fd.read().decode('utf-8'))
+    for event in tree.findall('.//event'):
+        talk = {child.tag: child.text for child in event}
+        if talk['type'] != category:
+            continue
+        if 'description' in talk:
+            talk['description'] = Markdown().convert(talk['description'])
+        talks.append(talk)
+    return render_template(
+        '{lang}/talks.html.jinja2'.format(lang=lang),
+        category=category, talks=talks, lang=lang)
 
 
 @app.route('/2019/schedule.html')
