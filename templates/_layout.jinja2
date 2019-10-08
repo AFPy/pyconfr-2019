@@ -9,7 +9,7 @@
   ('support', ('Nous soutenir', 'Support Us')),
 ) -%}
 
-{%- set title = dict(MENU).get(page_name, 'Bordeaux')[1 if lang == 'en' else 0] -%}
+{%- set title = dict(MENU).get(page_name, ['Bordeaux', 'Bordeaux'])[1 if lang == 'en' else 0] -%}
 
 {%- from '_sponsors.jinja2' import sponsors -%}
 {%- from '_map.jinja2' import map -%}
@@ -43,20 +43,22 @@
       </ul>
     </nav>
 
-    <aside>
-      <ul>
-        <li id="french" class="{{ 'active' if lang == 'fr' }}">
-          <a title="Français" href="{{ url_for('page', name=page_name, lang='fr') }}">
-            Français
-          </a>
-        </li>
-        <li id="english" class="{{ 'active' if lang == 'en' }}">
-          <a title="English" href="{{ url_for('page', name=page_name, lang='en') }}">
-            English
-          </a>
-        </li>
-      </ul>
-    </aside>
+    {% if request.endpoint == 'page' %}
+      <aside>
+        <ul>
+          <li id="french" class="{{ 'active' if lang == 'fr' }}">
+            <a title="Français" href="{{ url_for('page', name=page_name, lang='fr') }}">
+              Français
+            </a>
+          </li>
+          <li id="english" class="{{ 'active' if lang == 'en' }}">
+            <a title="English" href="{{ url_for('page', name=page_name, lang='en') }}">
+              English
+            </a>
+          </li>
+        </ul>
+      </aside>
+    {% endif %}
 
     <main>
       {% block content %}{% endblock content %}
