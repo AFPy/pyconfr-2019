@@ -25,8 +25,13 @@ def page(name='index', lang='fr'):
 @app.route('/2019/schedule.html')
 def schedule():
     with urlopen('https://cfp-2019.pycon.fr/schedule/html/') as fd:
-        data = fd.read()
-    return render_template('schedule.html.jinja2', data=data.decode('utf-8'))
+        data = fd.read().decode('utf-8')
+        # Delete extra cells for sprints
+        data = (
+            data
+            .replace('colspan="9"', '')
+            .replace('<td colspan="8"></td>', ''))
+    return render_template('schedule.html.jinja2', data=data)
 
 
 @app.cli.command('freeze')
