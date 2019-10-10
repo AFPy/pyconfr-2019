@@ -32,6 +32,8 @@ def talks(lang, category):
     for day in tree.findall('.//day'):
         for event in day.findall('.//event'):
             talk = {child.tag: child.text for child in event}
+            talk['person'] = ', '.join(
+                person.text for person in event.findall('.//person'))
             talk['id'] = event.attrib['id']
             talk['day'] = day.attrib['date']
             if talk['type'] != category:
