@@ -473,6 +473,20 @@
         propres serveurs que sur des infrastructures externes (cloud en
         particulier).
       </p>
+    {% elif company == 'Google Cloud' %}
+      <p>
+        ⛅ Google Cloud est un cloud ouvert à tous, aux développeurs, aux
+        devops, aux data scientists et à bien d'autres encore.
+      </p>
+      <p>
+        🐍 Nous aimons Python ! Concevez, déployez et surveillez vos fonctions,
+        applications, charges de calcul, notebooks et conteneurs, à grande
+        échelle. Bénéficiez de nos plateformes IA et big data pour analyser et
+        comprendre vos données.
+      </p>
+      <p>
+        → <a href="https://cloud.google.com/python">cloud.google.com/python</a>
+      </p>
     {% endif %}
 
   {% elif lang == 'en' %}
@@ -937,6 +951,19 @@
         can apply our expertise on our own infrastructure as well as on
         external cloud platforms.
       </p>
+    {% elif company == 'Google Cloud' %}
+      <p>
+        ⛅ Google Cloud is a cloud open to all from developers to devops, data
+        scientists, and many more.
+      </p>
+      <p>
+        🐍 We love Python! Build, deploy and monitor your functions,
+        applications, workloads, notebooks, and containers at scale. Benefit
+        from our AI and big data platforms to analyze and understand your data.
+      </p>
+      <p>
+        → <a href="https://cloud.google.com/python">cloud.google.com/python</a>
+      </p>
     {% endif %}
 
   {% endif %}
@@ -947,6 +974,7 @@
   {% set levels = {
   'Platine' if lang == 'fr' else 'Platinum': {
     'Université de Bordeaux': 'https://www.u-bordeaux.fr/Universite',
+    'Google Cloud': 'https://cloud.google.com/python',
   },
 
   'Or' if lang == 'fr' else 'Gold': {
