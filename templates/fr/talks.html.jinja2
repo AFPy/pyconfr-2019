@@ -11,7 +11,7 @@
   </hgroup>
 
   {% for talk in talks %}
-    <article>
+    <article id="{{ talk.title|lower|escape }}">
       <h3>{{ talk.title }}</h3>
       <p>
         Par {{ talk.person }}
