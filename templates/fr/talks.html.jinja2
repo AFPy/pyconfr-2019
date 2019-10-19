@@ -11,8 +11,8 @@
   </hgroup>
 
   {% for talk in talks %}
-    <article>
-      <h3>{{ talk.title }}</h3>
+    <article id="{{ talk.title|lower|escape }}">
+      <h3>{{ talk.title }} <a href="#{{ talk.title|lower|escape }}">🔗</a></h3>
       <p>
         Par {{ talk.person }}
         {% if category == 'sprint' %}

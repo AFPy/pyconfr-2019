@@ -1,8 +1,8 @@
-from datetime import datetime
 from urllib.request import urlopen
 from xml.etree import ElementTree
 
-from flask import Flask, abort, render_template
+from bs4 import BeautifulSoup
+from flask import Flask, render_template
 from flask_frozen import Freezer
 from markdown2 import Markdown
 from sassutils.wsgi import SassMiddleware
@@ -23,6 +23,7 @@ def page(name='index', lang='fr'):
     return render_template(
         '{lang}/{name}.html.jinja2'.format(name=name, lang=lang),
         page_name=name, lang=lang)
+
 
 @app.route('/2019/<lang>/talks/<category>.html')
 def talks(lang, category):
@@ -55,6 +56,24 @@ def schedule():
             data
             .replace('colspan="9"', '')
             .replace('<td colspan="8"></td>', ''))
+
+    # insert link in the table
+    soup = BeautifulSoup(data, 'html.parser')
+    conf_colors = {
+        '#ff7373': 'keynote',
+        '#73cbef': 'workshop',
+        '#e9b96e': 'conference',
+    }
+    for color, kind in conf_colors.items():
+        for td in soup.find_all('td', attrs={'bgcolor': color}):
+            title = list(td.children)[0]
+            href = '/2019/fr/talks/{}.html#{}'.format(
+                kind, str(title).lower()
+            )
+            link = soup.new_tag('a', href=href)
+            title.wrap(link)
+    data = str(soup)
+
     return render_template('schedule.html.jinja2', data=data)
 
 
