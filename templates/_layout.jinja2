@@ -7,6 +7,10 @@
   ('news', ('Actualités', 'News')),
   ('conduct', ('Code de conduite', 'Code of Conduct')),
   ('support', ('Nous soutenir', 'Support Us')),
+  ('keynote', ('Plénières', 'Keynotes')),
+  ('conference', ('Conférences', 'Talks')),
+  ('workshop', ('Ateliers', 'Workshops')),
+  ('sprint', ('Sprints', 'Sprints')),
 ) -%}
 
 {%- set title = dict(MENU).get(page_name, ['Bordeaux', 'Bordeaux'])[1 if lang == 'en' else 0] -%}
