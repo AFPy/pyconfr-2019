@@ -7,13 +7,15 @@
   ('news', ('Actualités', 'News')),
   ('conduct', ('Code de conduite', 'Code of Conduct')),
   ('support', ('Nous soutenir', 'Support Us')),
+) -%}
+{%- set EXTRA_PAGES = (
   ('keynote', ('Plénières', 'Keynotes')),
   ('conference', ('Conférences', 'Talks')),
   ('workshop', ('Ateliers', 'Workshops')),
   ('sprint', ('Sprints', 'Sprints')),
 ) -%}
 
-{%- set title = dict(MENU).get(page_name, ['Bordeaux', 'Bordeaux'])[1 if lang == 'en' else 0] -%}
+{%- set title = dict(MENU + EXTRA_PAGES).get(page_name, ['Bordeaux', 'Bordeaux'])[1 if lang == 'en' else 0] -%}
 
 {%- from '_sponsors.jinja2' import sponsors -%}
 {%- from '_map.jinja2' import map -%}
