@@ -12,7 +12,7 @@
 
   {% for talk in talks %}
     <article>
-      <h3>{{ talk.title }}</h3>
+      <h3 id="{{ talk.title.replace(' ', '-') }}">{{ talk.title }}</h3>
       <p>
         Par {{ talk.person }}
         {% if category == 'sprint' %}
