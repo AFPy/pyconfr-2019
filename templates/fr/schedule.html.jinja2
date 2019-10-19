@@ -26,9 +26,9 @@
       <a href="{{ url_for('talks', lang=lang, category='sprint') }}">sprints</a>.
     </p>
 
-    <iframe src="{{ url_for('schedule') }}"></iframe>
+    <iframe src="{{ url_for('schedule', lang=lang) }}"></iframe>
     <div class="column center">
-      <a class="button" href="{{ url_for('schedule') }}">Plein écran</a>
+      <a class="button" href="{{ url_for('schedule', lang=lang) }}">Plein écran</a>
     </div>
   </article>
 

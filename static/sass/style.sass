@@ -175,6 +175,15 @@ main
     &:not(:first-child)
       border-top: 1px solid $secondary
 
+    h3 a
+      color: inherit
+      cursor: text
+
+      &::after
+        content: '🔗'
+        cursor: pointer
+        margin-left: 0.5em
+
     table
       border-collapse: collapse
       margin: 2em auto
