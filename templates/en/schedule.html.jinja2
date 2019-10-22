@@ -10,16 +10,13 @@
   <article>
     <h3>Calendar</h3>
     <p>
-      <strong>
-        Calendar is provisional and may change until the beginning of the
-        conference.
-      </strong>
+      The calendar is available below, in a <a class="button" href="{{
+      url_for('schedule', lang=lang) }}">fullscreen page</a>, or in your
+      favourite calendar application as an
+      <a class="button" href="{{ url_for('calendar') }}">iCal file</a>.
     </p>
     <p>
-      It will be available in multiple formats during the event.
-    </p>
-    <p>
-      You can also read the description of
+      You can read the description of
       <a href="{{ url_for('talks', lang=lang, category='keynote') }}">keynotes</a>,
       <a href="{{ url_for('talks', lang=lang, category='conference') }}">talks</a>,
       <a href="{{ url_for('talks', lang=lang, category='workshop')}}">workshops</a> and
@@ -27,7 +24,6 @@
     </p>
     <iframe src="{{ url_for('schedule', lang=lang) }}"></iframe>
     <div class="column center">
-      <a class="button" href="{{ url_for('schedule', lang=lang) }}">Fullscreen</a>
     </div>
   </article>
 

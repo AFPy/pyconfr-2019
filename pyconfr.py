@@ -3,8 +3,9 @@ from urllib.request import urlopen
 from xml.etree import ElementTree
 
 from bs4 import BeautifulSoup
-from flask import Flask, render_template, url_for
+from flask import Flask, Response, render_template, url_for
 from flask_frozen import Freezer
+from icalendar import Calendar
 from markdown2 import Markdown
 from sassutils.wsgi import SassMiddleware
 
@@ -97,6 +98,17 @@ def schedule(lang):
             title.wrap(link)
 
     return render_template('schedule.html.jinja2', data=soup)
+
+
+@app.route('/2019/pyconfr-2019.ics')
+def calendar():
+    with urlopen('https://cfp-2019.pycon.fr/schedule/ics/') as fd:
+        calendar = Calendar.from_ical(fd.read())
+    # Delete sprints
+    calendar.subcomponents = [
+        event for event in calendar.subcomponents
+        if event['DTSTART'].dt.day != 31]
+    return Response(calendar.to_ical(), mimetype='text/calendar')
 
 
 @app.cli.command('freeze')

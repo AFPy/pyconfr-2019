@@ -10,13 +10,10 @@
   <article>
     <h3>Calendrier</h3>
     <p>
-      <strong>
-        Le calendrier est provisoire et peut être modifié jusqu’au début de la
-        conférence.
-      </strong>
-    </p>
-    <p>
-      Il sera disponible dans divers formats lors de l’événement.
+      Le calendrier est disponible ci-dessous, sur une <a class="button"
+      href="{{ url_for('schedule', lang=lang) }}">page en plein écran</a>,
+      ou <a class="button" href="{{ url_for('calendar') }}">dans
+      votre application de calendrier favorite</a>.  .
     </p>
     <p>
       Vous pouvez également lire la description des
@@ -27,9 +24,6 @@
     </p>
 
     <iframe src="{{ url_for('schedule', lang=lang) }}"></iframe>
-    <div class="column center">
-      <a class="button" href="{{ url_for('schedule', lang=lang) }}">Plein écran</a>
-    </div>
   </article>
 
   <article id="register">

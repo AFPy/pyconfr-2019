@@ -1,6 +1,6 @@
 .venv:
 	python3 -m venv .venv
-	.venv/bin/pip install frozen-flask libsass markdown2 beautifulsoup4
+	.venv/bin/pip install frozen-flask libsass markdown2 beautifulsoup4 icalendar
 
 install: .venv
 
