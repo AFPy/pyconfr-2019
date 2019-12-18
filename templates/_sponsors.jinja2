@@ -487,6 +487,18 @@
       <p>
         → <a href="https://cloud.google.com/python">cloud.google.com/python</a>
       </p>
+    {% elif company == 'Python Software Foundation' %}
+      <p>
+        Python Software Foundation est une organisation dédiée à la promotion
+        des technologies open source liées au langage de programmation Python.
+      </p>
+    {% elif company == 'EuroPython Society' %}
+      <p>
+        EuroPython Society (EPS) est une organisation suédoise à but non
+        lucratif qui organise des conférences EuroPython, soutient la
+        communauté Python en Europe et détient les droits sur la série de
+        conférences EuroPython et ses marques.
+      </p>
     {% endif %}
 
   {% elif lang == 'en' %}
@@ -964,6 +976,18 @@
       <p>
         → <a href="https://cloud.google.com/python">cloud.google.com/python</a>
       </p>
+    {% elif company == 'Python Software Foundation' %}
+      <p>
+        The Python Software Foundation is an organization devoted to advancing
+        open source technology related to the Python programming language.
+      </p>
+    {% elif company == 'EuroPython Society' %}
+      <p>
+        The EuroPython Society (EPS) is a Swedish non-profit organization which
+        organizes EuroPython conferences, supports the Python community in
+        Europe and holds the rights to the EuroPython conference series and
+        trademarks.
+      </p>
     {% endif %}
 
   {% endif %}
@@ -975,6 +999,8 @@
   'Platine' if lang == 'fr' else 'Platinum': {
     'Université de Bordeaux': 'https://www.u-bordeaux.fr/Universite',
     'Google Cloud': 'https://cloud.google.com/python',
+    'Python Software Foundation': 'https://www.python.org/psf-landing/',
+    'EuroPython Society': 'https://www.europython-society.org/',
   },
 
   'Or' if lang == 'fr' else 'Gold': {
@@ -1012,7 +1038,6 @@
 
   'Partenaires' if lang == 'fr' else 'Partners':
   {
-    'Python Software Foundation': 'https://www.python.org/psf-landing/',
     'Sticker Mule': 'https://stickermule.com/supports/pyconfr19-sponsorship',
     'GNU/Linux Magazine': 'https://www.gnulinuxmag.com/',
   },
